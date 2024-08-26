@@ -1,8 +1,9 @@
 {
   "devDependencies": {
-    "sst": "3.0.70",
     "@biomejs/biome": "^1.8.3",
-    "simple-git-hooks": "^2.11.1"
+    "serverless": "^4.2.3",
+    "simple-git-hooks": "^2.11.1",
+    "sst": "3.0.70"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",

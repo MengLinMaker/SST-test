@@ -17,7 +17,7 @@
     }
   },
   "files": {
-    "ignore": ["node_modules", ".sst", "coverage"],
+    "ignore": ["node_modules", ".serverless", ".sst", "coverage"],
     "ignoreUnknown": true
   }
 }

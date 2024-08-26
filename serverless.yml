@@ -1,0 +1,37 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: menglinmaker
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: sst-test
+service: sst-test
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  stage: dev
+  region: us-east-1
+
+build:
+  esbuild:
+    sourcemap: false
+package:
+  individually: true
+
+functions:
+  index:
+    handler: functions/index.handler
+    events:
+      - http:
+          path: /
+          method: get
+  blog:
+    handler: functions/blog.handler
+    events:
+      - http:
+          path: /blog
+          method: get
+  account:
+    handler: functions/account.handler
+    events:
+      - http:
+          path: /account
+          method: get
