@@ -33,7 +33,10 @@ SST ION officially supports [Node 18 and 20](https://github.com/sst/ion/blob/d50
 - No live reloading at all.
 
 ### SAM CLI
-- 
+- SAM deploys in 130 seconds.
+- SAM redeploys in 40 seconds.
+- SAM removes in 40 seconds.
+- Sync failed.
 
 &nbsp;
 
@@ -43,10 +46,14 @@ General observations:
 
 SST ION:
 - Deployment speed is quite fast.
+- Undoubtedly will have the fastest CI speed.
 - Excels at fast e2e testing scenarios with only lambda changes.
 - Only officially supports Node 18 and 20.
 - Does offer a lot of high level abstractions.
+- Lack of other low level services.
 - Extensive TypeScript and JSDoc documentation.
 - No well explained examples. Well, most IaC seem to lack in this department.
 
-Overall, SST ION seem like streamline experience for Node. Otherwise, best to stick to another IaC.
+Overall, SST ION seem like streamline experience for Node. Otherwise, best to stick to Serverless Framework v4, which has better performance than v3.
+
+_Note: Serverless Framework v4 requires payment for companies over $2 million ARR._
