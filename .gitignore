@@ -1,6 +1,7 @@
 # IaC
 .sst
 .serverless
+.aws-sam
 
 # Dependencies
 node_modules

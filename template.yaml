@@ -1,0 +1,59 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+
+Globals:
+  Function:
+    Timeout: 3
+    Runtime: nodejs20.x
+    CodeUri: functions/
+    Architectures:
+      - arm64
+
+Resources:
+  IndexFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Events:
+        Index:
+          Type: Api
+          Properties:
+            Path: /
+            Method: get
+    Metadata:
+      BuildMethod: esbuild
+  AccountFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: account.handler
+      Events:
+        Account:
+          Type: Api
+          Properties:
+            Path: /account
+            Method: get
+    Metadata:
+      BuildMethod: esbuild
+  BlogFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: blog.handler
+      Events:
+        Index:
+          Type: Api
+          Properties:
+            Path: /blog
+            Method: get
+    Metadata:
+      BuildMethod: esbuild
+
+Outputs:
+  IndexApi:
+    Description: "API Gateway endpoint URL for Prod stage for Hello World function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/"
+  IndexFunction:
+    Description: "Hello World Lambda Function ARN"
+    Value: !GetAtt IndexFunction.Arn
+  IndexFunctionIamRole:
+    Description: "Implicit IAM Role created for Hello World function"
+    Value: !GetAtt IndexFunctionRole.Arn
