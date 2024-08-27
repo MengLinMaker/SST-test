@@ -30,7 +30,7 @@ SST ION officially supports [Node 18 and 20](https://github.com/sst/ion/blob/d50
 - SLS deploys in 100 seconds.
 - SLS redeploys in 50 seconds.
 - SLS removes in 20 seconds.
-- No live reloading at all.
+- SLS redeploys single function in 12 seconds.
 
 ### SAM CLI
 - SAM deploys in 130 seconds.
